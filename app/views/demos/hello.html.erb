@@ -1,0 +1,12 @@
+<h1>Demos#hello</h1>
+<p>This is the Hello page!</p>
+
+<% a = [4, 5, 6] %>
+<p><%= a[0] + a[2] %></p>
+<br/>
+<% @array.each do |n|%>
+<%= n %>
+<%end%>
+
+<a href= '/demos/index'>Index page 1</a><br/>
+<%= link_to("Index page 2", {:controller => 'demos', :action => 'index'}) %>
