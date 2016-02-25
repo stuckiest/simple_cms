@@ -1,2 +1,28 @@
-<h1>Subjects#edit</h1>
-<p>Find me in app/views/subjects/edit.html.erb</p>
+<%= link_to("<< Back to list", {:action => 'index'}, :class => 'back-link')%>
+
+<div  class="subjects edit">
+	<h2>Update Subject</h2>
+	<%= form_for @subject do |f| %>
+
+	 <%= f.label :name %>:
+
+	 <%= f.text_field :name %>
+
+
+	 <%= f.label :position %>
+
+	 <%= f.text_field :position %>
+
+
+	 <%= f.label :visible %>
+
+	 <%= f.text_field :visible %>
+
+	 <div class="form-buttons">
+	 </br>
+	 <%= f.submit("Update Subject") %>
+	</div> 
+
+	<% end %>
+
+</div>
