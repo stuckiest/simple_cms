@@ -11,3 +11,18 @@ class Subject < ActiveRecord::Base
 end
 
 # % are wild cards, so %query% doesn't have to match exactly - it can be a substring
+
+# ! IMPORTANT ! a scope is the same as writing:
+
+# def self.visible
+# 	where (:visible => true)
+# end
+
+# or 
+
+# def self.sorted
+# 	order ("subject.position ASC")
+# end
+
+# lambda's are evaluated when called, each time they are called
+# so if you are doing something with time/date it's best to use lambda 

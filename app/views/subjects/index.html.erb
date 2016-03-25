@@ -1,3 +1,9 @@
+<% if !flash[:notice].blank? %>
+	<div class="notice">
+		<%= flash[:notice] %>
+	</div>
+	<% end %>
+	
 <div class="subjects index">
 	<h2>Subjects</h2>
 
@@ -22,9 +28,8 @@
 			<td class="center"><%= subject.pages.size %></td>
 			<td class="actions">
 				<%= link_to 'Show', subject_path(subject) %>
-				
 				<%= link_to 'Edit', edit_subject_path(subject) %>
-			<%= button_to 'Delete', subject_path(subject), method: :delete, data: {confirm: 'Are you sure?'} %>
+				<%= button_to 'Delete subject', subject, method: :delete %> 
               
 			</td>
 		</tr>

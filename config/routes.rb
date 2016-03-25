@@ -1,14 +1,10 @@
 Rails.application.routes.draw do
+
+
   resources :subjects
-  # get 'subjects/index'
-
-  # get 'subjects/show'
-
-  # get 'subjects/new'
-
-  # get 'subjects/edit'
-
-  # get 'subjects/delete'
+  resources :pages
+  resources :sections
+ 
 
   root "subjects#index"
 
