@@ -1,2 +1,8 @@
-<h1>Sections#new</h1>
-<p>Find me in app/views/sections/new.html.erb</p>
+<%= link_to("<< Back to list", {:action => 'index'}, :class => 'back-link')%>
+
+<div  class="sections new">
+	<h2>Create a New Section</h2>
+	
+	<%= render(:partial => "form") %> 
+
+</div>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Simple CMS | <%= @page_title || "Admin" %></title>
+  <!-- %= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true % -->
+  <%# = javascript_include_tag #'application', 'data-turbolinks-track' => true %>
+  <%# = csrf_meta_tags %>
+
+</head>
+<body>
+	<div id="header">
+		<h2>Simple CMS Admin</h2>
+	</div>
+
+	<div id="main">
+	  <% if !flash[:notice].blank? %>
+			<div class="notice">
+				<h3><%= flash[:notice] %></h3>
+			</div>
+		<% end %>
+		<div id="content">
+			<!-- before yield -->
+			<%= yield %>
+			<!-- after yeild -->
+		</div>
+	</div>
+
+	<div id="footer">
+		<p id="copyright">&copy; Ellen Stucki</p>
+	</div>  
+</body>
+</html>

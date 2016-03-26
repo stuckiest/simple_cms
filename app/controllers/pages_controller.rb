@@ -1,4 +1,7 @@
 class PagesController < ApplicationController
+  
+layout "admin"
+
   def index
   	@pages = Page.sorted
   end
@@ -14,7 +17,8 @@ class PagesController < ApplicationController
   def create
   	@page = Page.new(page_params)
   	if @page.save
-  		redirect_to page_path
+  		flash[:notice] = "#{@page.name} created successfully"
+  		redirect_to pages_path
   	else
   		render :new
   	end
@@ -27,7 +31,8 @@ class PagesController < ApplicationController
   def update
   	@page = Page.find(params[:id])
   	if @page.update(page_params)
-  		redirect_to page_path
+  		flash[:notice] = "#{@page.name} updated successfully"
+  		redirect_to pages_path
   	else
   		render :edit
   	end
@@ -36,6 +41,7 @@ class PagesController < ApplicationController
   def destroy
   	@page.find(params[:id])
   	@page.destroy
+  	flash[:notice] = "#{@page.name} destroyed successfully"
   	redirect_to pages_path
   end
 

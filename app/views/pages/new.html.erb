@@ -1,2 +1,7 @@
-<h1>Pages#new</h1>
-<p>Find me in app/views/pages/new.html.erb</p>
+<%= link_to("<< Back to list", {:action => 'index'}, :class => 'back-link')%>
+
+<div  class="pages new">
+	<h2>Create a new page</h2>
+	<%= render(:partial => "form") %> 
+
+</div>
