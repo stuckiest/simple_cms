@@ -22,7 +22,7 @@
 			<td><%= page.name %></td>
 			<td><%= page.permalink %></td>
 			<td><%= page.position %></td>
-			<td class="center"><%= page.visible ? 'Yes' : 'No' %></td> 
+			<td class="center"><%= status_tag(page.visible) %></td> 
 			<!-- above is a ternary - a one line if/else statement -->
 			<td class="center"><%#= page.sections.size %></td>
 			<td class="actions">
